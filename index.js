@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const bodyParser = require("body-parser");
+const config = require('./config/key')
 const { User } = require("./models/User");
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -10,13 +11,11 @@ app.use(bodyParser.json());
 
 const mongoose = require("mongoose");
 mongoose
-  .connect(
-    "mongodb+srv://sosow0212:1234@cluster0.yzuli.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-  )
+  .connect(config.mongoURI)
   .then(() => console.log("MongoDB Connected..."))
   .catch((e) => console.log("MongoDB error: ", e));
 
-app.get("/", (req, res) => res.send("Hello World!"));
+app.get("/", (req, res) => res.send("Hello World!dasdasdada"));
 
 app.post("/register", (req, res) => {
   // 회원가입시 필요한 정보를 Client에서 가저오면,
