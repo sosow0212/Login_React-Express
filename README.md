@@ -1,5 +1,6 @@
 # 인프런 존안님 강의
 
+# 서버 npm start backend
 ## npm init > npm install express --save
 ## npm install mongoose --save
 ## ssh 등록
