@@ -26,7 +26,7 @@ function LoginPage(props) {
       password: Password,
     };
 
-    dispatch(loginUser(body)).then((response) => {
+    dispatch(loginUser(body)).then(response => {
       if (response.payload.loginSuccess) {
         // 메인 페이지로 이동
 
